@@ -108,34 +108,39 @@ void nhap(mathang &a) { //Hàm nhập hàng
 void xuatkho(){
 
    while(true){
-    cout<<"nhập số loại sản phẩm cần xuất "<<endl;
+    cout<<"nhập số loại sản phẩm cần xuất ";
     int a=0;
     cin>>a;
     for(int i=0;i<a;i++){
-        int xuat;
-        cout<<"nhập sản phẩm cần xuất kho thứ (STT):"<<i+1<<endl;
+        int xuat=0;
+        cout<<"nhập sản phẩm cần xuất kho thứ "<<i+1<<" (STT):";
         cin>>xuat;
         if(xuat<0||xuat>somathang()){
-            cout<<"tên sản phẩm không hợp lệ mời nhập lại "<<endl;
+            cout<<"tên sản phẩm không hợp lệ mời nhập lại ";
             continue;
         }
-        if
-        for(int i=xuat-1;i<=somathang();i++){
-            kho[i]=kho[i]
-        }
         int soluong=0;
-        cout<<"nhập số lượng "<<endl;
+        cout<<"nhập số lượng ";
         cin>>soluong;
         if(soluong<0||soluong>kho->soluong){
             cout<<"số lượng không hợp lệ vui lòng nhập lại "<<endl;
             continue;
         }
+        kho[xuat-1].soluong=kho[xuat-1].soluong-soluong;
+        if(kho[xuat].soluong==0){
+            for(int i=xuat-1;i<=somathang();i++){
+                kho[i]=kho[i+1];
+            }
+            demhang--;
 
+        }
+    }
+    break;
 
     }
+        hienthikho(somathang());
+
    }
-    hienthikho(somathang());
-}
 void nhapkho(){
     cout << "Số mặt hàng đang có trong kho là: ";
     cout << somathang() << endl;
@@ -182,7 +187,7 @@ int main() {
     while(1){
         cout << "___CHAO MUNG BAN DEN VOI HE THONG QUAN LI KHO HANG___" << endl;
         cout << "|  1.Xem thong tin mat hang ton kho                 |" << endl;
-        cout << "|  2.Xuat kho                                       |" << endl;
+        cout << "|  2.Xuat kho                                        |" << endl;
         cout << "|  3.Nhap them so luong hang moi nhap ve kho        |" << endl;
         cout << "|  4.Cap nhat thong tin kho sau khi nhap xuat       |" << endl;
         cout << "|  0.Thoat he thong                                 |" << endl;
