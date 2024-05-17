@@ -83,9 +83,9 @@ int somathang(){
 }
 void hienthikho(int n){ //Hàm hiển thị kho hàng với các mặt hàng sẵn có
     cout << "$___$____________________$____________$_________________$"<< endl;
-    cout << "|STT |" <<"    TEN SAN PHAM    |" << "  SO LUONG  |" << "  GIA/1sp(dong)  |"<<endl;
+    cout << "|STT  |" <<"    TEN SAN PHAM    |" << "  SO LUONG  |" << "  GIA/1sp(dong)  |"<<endl;
     for(int i = 0; i < n; i++){
-        printf("| %d  |", i+1);
+        printf("|%-5d|", i + 1);
         int a = strlen(kho[i].tenhang);
         cout << kho[i].tenhang << setw(21 - a) << "|";
         int b = cnt(kho[i].soluong);
@@ -115,19 +115,24 @@ void xuatkho(){
         int xuat=0;
         cout<<"nhập sản phẩm cần xuất kho thứ "<<i+1<<" (STT):";
         cin>>xuat;
-        if(xuat<0||xuat>somathang()){
+        if(xuat<1||xuat>somathang()){
             cout<<"tên sản phẩm không hợp lệ mời nhập lại ";
+            i--;
             continue;
         }
         int soluong=0;
+        while(true){
         cout<<"nhập số lượng ";
         cin>>soluong;
-        if(soluong<0||soluong>kho->soluong){
+        if(soluong>0&&soluong<=kho[xuat-1].soluong){
+            break; // số lượng hợp lệ thoát vòng while
+        }
+        else{
             cout<<"số lượng không hợp lệ vui lòng nhập lại "<<endl;
-            continue;
+        }
         }
         kho[xuat-1].soluong=kho[xuat-1].soluong-soluong;
-        if(kho[xuat].soluong==0){
+        if(kho[xuat-1].soluong==0){
             for(int i=xuat-1;i<=somathang();i++){
                 kho[i]=kho[i+1];
             }
