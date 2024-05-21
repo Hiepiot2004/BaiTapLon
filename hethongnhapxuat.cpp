@@ -176,7 +176,7 @@ void baomat(){
             cout << "Passwork:";
             string mk;
             cin >> mk;
-            if(mk.compare(b) != 0){
+            if(mk.compare(b) != 0){  
                 cout << "Sai mật khẩu, yêu cầu nhập lại" << endl;
                 continue;
             }
