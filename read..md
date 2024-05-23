@@ -1,3 +1,4 @@
-# hạnh ngu và hiệp ngu
+# 10 điểm KTLT
+
 
 
