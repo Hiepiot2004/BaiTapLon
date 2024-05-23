@@ -71,7 +71,7 @@ void taokho() {
     kho[4].giathanh = 500000;
     
     
-    strcpy(kho[5].tenhang, "Dau goi dau");
+    strcpy(kho[5].tenhang, "Dau goi dau ");
     kho[5].soluong = 200;
     kho[5].giathanh = 180000;
     
