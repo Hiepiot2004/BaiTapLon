@@ -173,7 +173,7 @@ void baomat(){
             continue;
         }
         else{
-            cout << "Passwork:";
+            cout << "Passwork: ";
             string mk;
             cin >> mk;
             if(mk.compare(b) != 0){  
